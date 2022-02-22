@@ -12,21 +12,22 @@ public class Homework {
 //    Create an array of n strings (called words), each word containing exactly p characters from the given alphabet.
 //    Display on the screen the generated array.
 
-    static void createWords(List<String> letters, int n, int p) {
+    static void createWords(List<Character> letters, int n, int p) {
         List<String> words = new ArrayList<String>();
         for (int i=0; i<n; i++) {
             // create the i-th word
-            String[] word = new String[p];
+            StringBuilder sb = new StringBuilder();
             for (int letter=0; letter<p; letter++){
                 Random rand = new Random();
                 int randomIndex = rand.nextInt(letters.size());
-                word[letter] = letters.get(randomIndex);
-                letters.remove(randomIndex);
+                sb.append(letters.get(randomIndex));
             }
-            System.out.println(Arrays.toString(word));
-            //words.add(String.valueOf(word));
+            String word = sb.toString();
+            words.add(word);
         }
-        //return words;
+        for (String word : words) {
+            System.out.println(word);
+        }
     }
 
 //    Two words are neighbors if they have a common letter.
@@ -46,8 +47,9 @@ public class Homework {
         System.out.println("n = " + n);
         System.out.println("p = " + p);
         System.out.println("m = " + m);  // should be 26
-        List<String> C = Arrays.asList("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
-                "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+        List<Character> C = Arrays.asList('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+                // Arrays.asList('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+                // 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
         System.out.println(Arrays.toString(C.toArray()));
         createWords(C, n, p);
 
