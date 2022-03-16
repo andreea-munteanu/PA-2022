@@ -4,22 +4,22 @@ package com.company;
  * @author: Andreea Munteanu, group X
  */
 public class Router extends Node implements Identifiable {
-    private String address; // IP
+    private String IP; // IP
 
-    public Router(String name, String MAC, String address) {
+    public Router(String name, String MAC, String IP) {
         super.name = name;
         super.MAC = MAC;
-        this.address = address;
+        this.IP = IP;
     }
 
     @Override
     public void setIP(String someIP) {
-        this.address = someIP;
+        this.IP = someIP;
     }
 
     @Override
     public String getIP() {
-        return this.address;
+        return this.IP;
     }
 
     public void setName(String name) {
@@ -36,7 +36,13 @@ public class Router extends Node implements Identifiable {
 
     public void printNode() {
         super.printNode();
-        System.out.print("IP: " + getIP() + "\n");
+        System.out.print(", IP: " + getIP() + "\n");
     }
+
+//    @Override
+//    public int compareTo(Router other) {
+//        assert this.IP != null;
+//        return this.IP.compareTo(other.IP);
+//    }
 
 }

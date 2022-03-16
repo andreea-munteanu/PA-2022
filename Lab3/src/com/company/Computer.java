@@ -52,7 +52,12 @@ class Computer extends Node implements Identifiable, Storage { //implements Iden
     public void printNode() {
         super.printNode();
         System.out.print(", IP: " + getIP() + ", memory: " + getStorage() + "GB\n");
-
     }
+//
+//    @Override
+//    public int compareTo(Computer other) {
+//        assert this.IP != null;
+//        return this.IP.compareTo(other.IP);
+//    }
 
 }
