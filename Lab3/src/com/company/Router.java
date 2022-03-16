@@ -4,28 +4,26 @@ package com.company;
  * @author: Andreea Munteanu, group X
  */
 public class Router extends Node implements Identifiable {
-    // name and location inherited from Node
-    public String MAC;
-    public String IP;
+    private String address; // IP
 
-    public Router(String name, String MAC, String IP) {
-        this.name = name;
-        this.MAC = MAC;
-        this.IP = IP;
+    public Router(String name, String MAC, String address) {
+        super.name = name;
+        super.MAC = MAC;
+        this.address = address;
     }
 
     @Override
     public void setIP(String someIP) {
-        this.IP = someIP;
+        this.address = someIP;
     }
 
     @Override
     public String getIP() {
-        return this.IP;
+        return this.address;
     }
 
     public void setName(String name) {
-        this.name = name + "(router)";
+        super.name = name + "(router)";
     }
 
     public String getMac() {
@@ -33,11 +31,12 @@ public class Router extends Node implements Identifiable {
     }
 
     public void setMac(String MAC) {
-        this.MAC = MAC;
+        super.MAC = MAC;
     }
 
     public void printNode() {
-        System.out.println("name: " + getName() + ", MAC: " + getMac() + ", IP: " + getIP());
+        super.printNode();
+        System.out.print("IP: " + getIP() + "\n");
     }
 
 }
