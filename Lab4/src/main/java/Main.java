@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
@@ -22,6 +21,21 @@ public class Main {
 
     public static void printIntersectionHashSet(Set<Intersection> inter) {
         System.out.println("---------- PRINT INTERSECTION HASHSET ----------\n" + inter);
+    }
+
+    public static boolean setContainsDuplicates(Set<Intersection> inter) {
+        // simulate for-in-for
+        Iterator<Intersection> value = inter.iterator();
+        while (value.hasNext()) {
+            Iterator<Intersection> value2 = inter.iterator();
+            while (value2.hasNext()) {
+                if (value2.equals(value) && value2.hashCode() != value.hashCode())
+                    return true;
+                value2.next();
+            }
+            value.next();
+        }
+        return false;
     }
 
     public static void main(String[] args) {
@@ -81,5 +95,10 @@ public class Main {
         // https://docs.oracle.com/javase/7/docs/api/java/util/Set.html#add(E)
         intersectionHashSet.addAll(Arrays.asList(intersections));
         printIntersectionHashSet(intersectionHashSet);
+        boolean containsDuplicates = setContainsDuplicates(intersectionHashSet);
+        if (!containsDuplicates) {
+            System.out.println("No duplicates found.");
+        }
+        else System.out.println("Duplicates found (impossible though).");
     }
 }
