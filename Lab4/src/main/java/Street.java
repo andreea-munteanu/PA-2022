@@ -3,13 +3,13 @@ import java.util.Objects;
 /**
  * @author: Andreea Munteanu, group X
  */
-public class Street{
+public class Street implements Comparable<Street>{
     private String name;
-    private float length; // in km
+    private int length; // in km
 
     // constructor
-    public Street(String name, float length) {
-        this.name = name;
+    public Street(String name, int length) {
+        this.name = name; // A.getName() + B.getName();
         this.length = length;
     }
 
@@ -26,7 +26,7 @@ public class Street{
         return length;
     }
 
-    public void setLength(float length) {
+    public void setLength(int length) {
         this.length = length;
     }
 
@@ -51,5 +51,10 @@ public class Street{
     @Override
     public int hashCode() {
         return Objects.hash(name, length);
+    }
+
+    @Override
+    public int compareTo(Street o) {
+        return 0;
     }
 }
