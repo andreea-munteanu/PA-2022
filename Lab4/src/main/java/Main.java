@@ -38,16 +38,24 @@ public class Main {
         return false;
     }
 
-    public static void main(String[] args) {
+    public static LinkedList<Street> getStreets() {
+        return streetLinkedList;
+    }
+
+    public static Set<Intersection> getIntersections() {
+        return intersectionHashSet;
+    }
+
+    public static void main() {
         /**
          * Creating the streets and intersections in the example.
-         * I named the vertices using capital letters (node_A, node_B etc.) s.t. the streets will be named AB, BC, CD etc.
+         * I named the vertices using capital letters (A, B etc.) s.t. the streets will be named AB, BC, CD etc.
          */
 
         // creating the intersections (named node_A, node_B, ...):
         String[] names = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "I"};
         var intersections = IntStream.rangeClosed(0, 9)
-                .mapToObj(i -> new Intersection("node_" + names[i]) )
+                .mapToObj(i -> new Intersection(names[i]) )
                 .toArray(Intersection[]::new);
 
 //        for (Intersection node : intersections) {
