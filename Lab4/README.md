@@ -5,4 +5,7 @@ Compulsory
 - full 
 
 Homework
-- yet to be done
+- created the class (done)
+- query (done)
+- random name generator (done)
+- solve the proble (yet to do)
