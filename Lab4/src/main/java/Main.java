@@ -101,6 +101,7 @@ public class Main {
         // creating the hashset of intersections:
         // the "addAll" method makes sure that the newly added element doesn't already exist in the set:
         // https://docs.oracle.com/javase/7/docs/api/java/util/Set.html#add(E)
+
         intersectionHashSet.addAll(Arrays.asList(intersections));
         printIntersectionHashSet(intersectionHashSet);
         boolean containsDuplicates = setContainsDuplicates(intersectionHashSet);

@@ -38,11 +38,27 @@ public class City {
 
     }
 
+    public static List<Street> createListOfStreetsStartingFromIntersection(Set<Intersection> intersections) {
+        return null;
+    }
+
     public static void main(String[] args) {
         // ------------------------------------- CREATING THE CITY --------------------------------------------
         Main.main();
-        LinkedList<Street> cityStreets = Main.getStreets();
-        Set<Intersection> cityIntersections = Main.getIntersections();
+
+        LinkedList<Street> cityStreets = Main.getStreets(); // the streets
+        Set<Intersection> cityIntersections = Main.getIntersections(); // the intersections
+        Map<Intersection, List<Street>> cityMap = new HashMap<>(); // the map of the city
+
+        cityMap.put(new Intersection("A"), Arrays.asList(cityStreets.get(4), cityStreets.get(5), cityStreets.get(6)));
+        cityMap.put(new Intersection("B"), Arrays.asList(cityStreets.get(0), cityStreets.get(6), cityStreets.get(12)));
+        cityMap.put(new Intersection("C"), Arrays.asList(cityStreets.get(1), cityStreets.get(2), cityStreets.get(9), cityStreets.get(10)));
+        cityMap.put(new Intersection("D"), Arrays.asList(cityStreets.get(1), cityStreets.get(3), cityStreets.get(4), cityStreets.get(9)));
+        cityMap.put(new Intersection("E"), Arrays.asList(cityStreets.get(3), cityStreets.get(10)));
+        cityMap.put(new Intersection("F"), Arrays.asList(cityStreets.get(2), cityStreets.get(13)));
+        cityMap.put(new Intersection("G"), Arrays.asList(cityStreets.get(5), cityStreets.get(7), cityStreets.get(13)));
+        cityMap.put(new Intersection("H"), Arrays.asList(cityStreets.get(0), cityStreets.get(5), cityStreets.get(8), cityStreets.get(11)));
+        cityMap.put(new Intersection("I"), Arrays.asList(cityStreets.get(4), cityStreets.get(11)));
 
         // display all the streets that are longer than a specified value and join at least 3 streets
         // (we chose 2 as string argument for that value)
@@ -94,5 +110,6 @@ public class City {
 
         // -------------------------------------- SOLVING THE PROBLEM ---------------------------------------------
         // TODO
+
     }
 }
