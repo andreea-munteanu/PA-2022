@@ -1,3 +1,1 @@
-compulsory
-
-homework: - 
+Compulsory
